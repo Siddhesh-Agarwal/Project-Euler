@@ -14,3 +14,22 @@ Which starting number, under one million, produces the longest chain?
 
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
+
+def collatz(num):
+    arr = []
+    while num != 1:
+        arr.append(num)
+        if num % 2 == 0:
+            num = num // 2
+        else:
+            num = 3 * num + 1
+    return arr
+
+max_len = 1
+max_num = 1
+for num in range(2, 1000000):
+    series = list(collatz(num))
+    if len(series) > max_len:
+        max_len = len(series)
+        max_num = num
+print(max_num)
