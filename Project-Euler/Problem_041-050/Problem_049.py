@@ -19,32 +19,35 @@ for number in range(1000, 10000):
 
 # function to return the permutations an integer
 def permute(n: int):
-    return [int(''.join(i)) for i in permutations(str(n))]
+    return [int("".join(i)) for i in permutations(str(n))]
+
 
 # prime permuations
 def prime_permutations(n: int):
     perms = permute(n)
-    prime_perms =[]
+    prime_perms = []
     for p in perms:
         if p in primes_arr:
             prime_perms.append(p)
     prime_perms.remove(n)
     return sorted(prime_perms)
 
+
 # find the sequence
 def sequence(n: int):
-    seq_bool=False
+    seq_bool = False
     global seq
-    seq=[]
-    fin =[]
+    seq = []
+    fin = []
     perms = prime_permutations(n)
     for q in perms:
-        if (q+(q-n)) in perms:
-            seq =[n,q,2*q-n]
-            seq_bool=True
+        if (q + (q - n)) in perms:
+            seq = [n, q, 2 * q - n]
+            seq_bool = True
     return seq_bool
+
 
 for prime in primes_arr:
     if sequence(prime):
-        if seq != [seq[0]]*3:
+        if seq != [seq[0]] * 3:
             print(seq)

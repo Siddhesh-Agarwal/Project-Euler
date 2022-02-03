@@ -14,6 +14,7 @@ Find the first four consecutive integers to have four distinct prime factors eac
 What is the first of these numbers?
 """
 
+
 def prime_factors(number: int):
     """Returns the list of prime factors of the given number."""
     factors = []
@@ -25,6 +26,7 @@ def prime_factors(number: int):
         else:
             divisor += 2 if divisor > 2 else 1
     return factors
+
 
 counter = 0
 number = 1

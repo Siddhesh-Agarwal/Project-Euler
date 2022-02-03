@@ -6,6 +6,7 @@ Find the sum of all the primes below two million.
 
 from math import sqrt
 
+
 def is_prime(number):
     if number < 2:
         return False
@@ -13,6 +14,7 @@ def is_prime(number):
         if number % i == 0:
             return False
     return True
+
 
 def sum_of_primes(limit):
     if limit < 2:
@@ -22,5 +24,6 @@ def sum_of_primes(limit):
         if is_prime(i):
             total += i
     return total
+
 
 print(sum_of_primes(2000000))

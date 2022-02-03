@@ -9,12 +9,15 @@ Find the pair of pentagonal numbers, Pj and Pk, for which their sum and differen
 """
 from math import sqrt
 
+
 def pentagonal_number(number: int):
     return number * (3 * number - 1) // 2
+
 
 def is_pentagonal(number: int):
     inverse = (1 + sqrt(1 + 24 * number)) / 6
     return inverse == int(inverse)
+
 
 result = 0
 notFound = True
@@ -22,7 +25,7 @@ i = 1
 while notFound:
     i += 1
     penta1 = pentagonal_number(i)
-    for j in range(i-1, 0, -1):
+    for j in range(i - 1, 0, -1):
         penta2 = pentagonal_number(j)
         if is_pentagonal(penta1 + penta2) and is_pentagonal(penta1 - penta2):
             result = penta1 - penta2

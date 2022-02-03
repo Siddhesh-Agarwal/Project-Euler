@@ -5,9 +5,12 @@ What is the smallest positive number that is evenly divisible by all of the numb
 """
 from math import gcd
 
+
 def foo(n):
     prod = 1
     for i in range(1, n + 1):
         prod *= i // gcd(prod, i)
     return prod
+
+
 print(foo(20))

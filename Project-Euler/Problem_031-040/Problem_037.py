@@ -9,6 +9,7 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
 from math import sqrt
 
+
 def is_prime(number: int):
     if number < 2:
         return False
@@ -17,25 +18,27 @@ def is_prime(number: int):
             return False
     return True
 
+
 def is_truncatable_prime(number: int):
     if number < 10:
         return False
-    
+
     # Remove digits from left to right
     number1 = number
     for _ in range(len(str(number))):
         if not is_prime(number1):
             return False
-        number1 = number1 // 10 
-    
+        number1 = number1 // 10
+
     # Remove digits from right to left
     number2 = number
     for _ in range(len(str(number))):
         if not is_prime(int(number2)):
             return False
         number2 = str(number2)[1:]
-    
+
     return True
+
 
 count = 0
 i = 11
@@ -44,6 +47,6 @@ while count != 11:
     if is_truncatable_prime(i):
         total += i
         count += 1
-        #print(i)
+        # print(i)
     i += 2
 print(total)

@@ -8,24 +8,28 @@ By converting each letter in a word to a number corresponding to its alphabetica
 Using words.txt, how many are triangle words?
 """
 
+
 def word_value(word: str):
     """Returns the value of a word."""
     return sum(ord(letter) - 64 for letter in word)
 
+
 triangular = lambda x: x * (x + 1) // 2
-triangular_numbers = [triangular(i) for i in range(20)] # more than enough
+triangular_numbers = [triangular(i) for i in range(20)]  # more than enough
+
 
 def is_triangular_number(number: int):
     """Returns True if number is a triangular number."""
-    return (number in triangular_numbers)
+    return number in triangular_numbers
+
 
 with open("./words.txt") as f:
     counter = 0
-    words = f.read().split(',')
+    words = f.read().split(",")
     for word in words:
         word = word[1:-1]
         value = word_value(word)
         if is_triangular_number(value):
             counter += 1
-            #print(word, value)
+            # print(word, value)
     print(counter)

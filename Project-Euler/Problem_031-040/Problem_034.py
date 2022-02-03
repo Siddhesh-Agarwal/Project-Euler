@@ -12,6 +12,6 @@ total = 0
 
 for i in range(10, 1000000):
     if sum(fetch_factorial[int(x)] for x in str(i)) == i:
-        #print(i)
+        # print(i)
         total += i
 print(total)

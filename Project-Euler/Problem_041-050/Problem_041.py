@@ -6,9 +6,11 @@ What is the largest n-digit pandigital prime that exists?
 
 from math import sqrt
 
+
 def is_pandigital(number: int):
     number = str(number)
-    return set(number) == set(str(i+1) for i in range(len(number)))
+    return set(number) == set(str(i + 1) for i in range(len(number)))
+
 
 def is_prime(number: int):
     if number < 2:
@@ -17,6 +19,7 @@ def is_prime(number: int):
         if number % i == 0:
             return False
     return True
+
 
 # every 9 digit and 8 digit pandigital number is divisible by 3.
 for number in range(10000000, 0, -1):

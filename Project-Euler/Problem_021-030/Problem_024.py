@@ -9,7 +9,9 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
 """
 from itertools import permutations
 
+
 def nth_lexicographic_permutation(n, digits):
-    return ''.join(str(x) for x in list(permutations(digits))[n-1])
+    return "".join(str(x) for x in list(permutations(digits))[n - 1])
+
 
 print(nth_lexicographic_permutation(1000000, range(10)))

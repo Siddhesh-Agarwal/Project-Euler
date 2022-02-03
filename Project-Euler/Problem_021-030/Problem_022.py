@@ -8,12 +8,14 @@ So, COLIN would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
 """
 
+
 def alphabetical_value(name):
     """Returns the alphabetical value of a name."""
     return sum(ord(c) - 64 for c in name)
 
-with open('./names.txt', 'r+') as f:
-    names = f.read().split(',')
+
+with open("./names.txt", "r+") as f:
+    names = f.read().split(",")
     names.sort()
     total = 0
     for pos, name in enumerate(names):

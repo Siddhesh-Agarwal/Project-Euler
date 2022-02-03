@@ -8,6 +8,7 @@ How many circular primes are there below one million?
 
 from math import sqrt
 
+
 def is_prime(number: int):
     if number < 2:
         return False
@@ -15,6 +16,7 @@ def is_prime(number: int):
         if number % i == 0:
             return False
     return True
+
 
 def is_circular_prime(number: int):
     for _ in range(len(str(number))):
@@ -27,6 +29,6 @@ def is_circular_prime(number: int):
 count = 0
 for number in range(1000000):
     if is_circular_prime(number):
-        #print(number)
+        # print(number)
         count += 1
 print(count)

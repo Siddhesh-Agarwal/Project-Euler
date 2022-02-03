@@ -15,9 +15,10 @@ Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be see
 Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 """
 
+
 def longest_recurring_cycle(limit):
     """Find the longest recurring cycle in the decimal fraction part of 1/d."""
-    max_len = 0  
+    max_len = 0
     max_d = 1
 
     for d in range(1, limit):
@@ -40,5 +41,6 @@ def longest_recurring_cycle(limit):
             max_d = d
 
     return max_d
+
 
 print(longest_recurring_cycle(1000))

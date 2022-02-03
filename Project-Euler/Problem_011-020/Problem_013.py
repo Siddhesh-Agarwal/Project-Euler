@@ -2,12 +2,16 @@
 Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 """
 
+
 def first_10_digits_of_sum(numbers):  # The number is inputed as a long string
     total11 = 0
-    numbers = numbers.split('\n')     # split the string into a list of strings
-    for number in numbers:            # for each number in the list
-        total11 += int(number[:12])   # add the first 12 digits (first 10 digits + log(100 numbers))
-    return str(total11)[:10]          # return the first 10 digits of the sum
+    numbers = numbers.split("\n")  # split the string into a list of strings
+    for number in numbers:  # for each number in the list
+        total11 += int(
+            number[:12]
+        )  # add the first 12 digits (first 10 digits + log(100 numbers))
+    return str(total11)[:10]  # return the first 10 digits of the sum
+
 
 numbers = """37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538

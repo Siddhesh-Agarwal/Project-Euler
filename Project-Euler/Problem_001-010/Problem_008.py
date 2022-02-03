@@ -25,6 +25,7 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 """
 
+
 def product(number: str):
     """Calculates the product of a sequence of digits."""
     prod = 1
@@ -32,17 +33,21 @@ def product(number: str):
         prod *= int(digit)
     return prod
 
+
 def find_13_adjacent_digits(number: str):
-    number = ''.join(number.split())
+    number = "".join(number.split())
     l = len(number)
     max = 0
-    for i in range(l-12):
-        prod = product(number[i:i+13])
+    for i in range(l - 12):
+        prod = product(number[i : i + 13])
         if prod > max:
             max = prod
     return max
 
-print(find_13_adjacent_digits("""
+
+print(
+    find_13_adjacent_digits(
+        """
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
@@ -63,4 +68,6 @@ print(find_13_adjacent_digits("""
 84580156166097919133875499200524063689912560717606
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
-"""))
+"""
+    )
+)

@@ -12,6 +12,7 @@ It can be verified that the sum of the numbers on the diagonals is 101.
 What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
 """
 
+
 def sum_of_diagonal_in_spiral(side):
     diagonal1 = 0
     element = 1
@@ -23,5 +24,6 @@ def sum_of_diagonal_in_spiral(side):
         element += 2 * i
 
     return diagonal1 + diagonal2
+
 
 print(sum_of_diagonal_in_spiral(1001))

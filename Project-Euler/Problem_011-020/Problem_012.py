@@ -20,14 +20,16 @@ What is the value of the first triangle number to have over five hundred divisor
 
 from math import sqrt
 
+
 def divisors(n):
     number_of_factors = 0
     for i in range(1, round(sqrt(n)) + 1):
         if n % i == 0:
-            number_of_factors +=2
+            number_of_factors += 2
         if i * i == n:
-            number_of_factors -=1
+            number_of_factors -= 1
     return number_of_factors
+
 
 def triangular_number_with(n_factors):
     x = 0
@@ -37,5 +39,6 @@ def triangular_number_with(n_factors):
         if divisors(x) >= n_factors:
             return x
         num += 1
+
 
 print(triangular_number_with(500))

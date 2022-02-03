@@ -11,6 +11,7 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 """
 from math import sqrt
 
+
 def sieve_of_eratosthenes(n):
     """Sieve of Eratosthenes"""
     prime_list = [True] * (n + 1)
@@ -20,6 +21,7 @@ def sieve_of_eratosthenes(n):
             for j in range(i * i, n + 1, i):
                 prime_list[j] = False
     return [i for i in range(len(prime_list)) if prime_list[i]]
+
 
 sieve = sieve_of_eratosthenes(1000000)
 length = 0

@@ -13,18 +13,21 @@ Let d1 be the 1st digit, d2 be the 2nd digit, and so on. In this way, we note th
 Find the sum of all 0 to 9 pandigital numbers with this property.
 """
 
-from  itertools import permutations
+from itertools import permutations
 
 primes = [2, 3, 5, 7, 11, 13, 17]
+
+
 def substring_divisible(number):
     for i in range(7):
-        sub = int(number[i+1: i+4])
+        sub = int(number[i + 1 : i + 4])
         if sub % primes[i] != 0:
             return 0
     return int(number)
 
+
 solution = 0
-for number in permutations('0123456789'):
-    number = ''.join(number)
+for number in permutations("0123456789"):
+    number = "".join(number)
     solution += substring_divisible(number)
 print(solution)

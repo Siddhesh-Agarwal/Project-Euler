@@ -7,23 +7,58 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 The use of "and" when writing out numbers is in compliance with British usage.
 """
 
+
 def number_to_words(number):
     """Converts a number to words."""
-    units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
-    hundreds = ['', 'one hundred', 'two hundred', 'three hundred', 'four hundred', 'five hundred', 'six hundred', 'seven hundred', 'eight hundred', 'nine hundred']
+    units = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    tens = [
+        "",
+        "",
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty",
+        "seventy",
+        "eighty",
+        "ninety",
+    ]
+    hundreds = [
+        "",
+        "one hundred",
+        "two hundred",
+        "three hundred",
+        "four hundred",
+        "five hundred",
+        "six hundred",
+        "seven hundred",
+        "eight hundred",
+        "nine hundred",
+    ]
     if number == 1000:
-        return 'one thousand'
+        return "one thousand"
     elif number >= 100:
         beyond = number % 100
-        seperator = ' and ' if beyond > 0 else ' '
+        seperator = " and " if beyond > 0 else " "
         return hundreds[number // 100] + seperator + number_to_words(number % 100)
     elif number >= 20:
-        return tens[number // 10] + ' ' + units[number % 10]
+        return tens[number // 10] + " " + units[number % 10]
     elif number >= 10:
-        return ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'][number - 10]
+        return [
+            "ten",
+            "eleven",
+            "twelve",
+            "thirteen",
+            "fourteen",
+            "fifteen",
+            "sixteen",
+            "seventeen",
+            "eighteen",
+            "nineteen",
+        ][number - 10]
     else:
         return units[number]
+
 
 def char_count(words):
     """Returns the number of characters in a number."""
@@ -32,5 +67,6 @@ def char_count(words):
         if char.isalpha():
             length += 1
     return length
+
 
 print(sum(char_count(number_to_words(i)) for i in range(1, 1001)))

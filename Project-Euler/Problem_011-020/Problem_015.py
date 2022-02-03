@@ -5,7 +5,9 @@ How many such routes are there through a 20×20 grid?
 """
 from math import factorial
 
+
 def number_of_paths(grid_size):
-    return factorial(2 * grid_size) // factorial(grid_size)**2
+    return factorial(2 * grid_size) // factorial(grid_size) ** 2
+
 
 print(number_of_paths(20))

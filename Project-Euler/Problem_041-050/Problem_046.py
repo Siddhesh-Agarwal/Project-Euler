@@ -20,8 +20,8 @@ while True:
     if all(number % prime for prime in primes):
         primes.add(number)
     else:
-        if not any((number-2*i*i) in primes for i in range(1, number)):
+        if not any((number - 2 * i * i) in primes for i in range(1, number)):
             break
-    number += 3-f
+    number += 3 - f
     f = -f
 print(number)

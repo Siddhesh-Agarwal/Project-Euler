@@ -11,15 +11,18 @@ Find the next triangle number that is also pentagonal and hexagonal.
 """
 from math import sqrt
 
+
 def is_triangle(number: int):
     """Check if n is a triangle number."""
     inverse = (sqrt(1 + 8 * number) - 1) / 2
     return inverse == int(inverse)
 
+
 def is_pentagonal(number: int):
     """Check if number is a pentagonal number."""
     inverse = (sqrt(1 + 24 * number) + 1) / 6
     return inverse == int(inverse)
+
 
 i = 143
 while True:

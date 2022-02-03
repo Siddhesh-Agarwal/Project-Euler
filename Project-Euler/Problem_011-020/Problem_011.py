@@ -55,40 +55,54 @@ for i in range(len(matrix)):
 
 prod_4 = lambda x: int(x[0]) * int(x[1]) * int(x[2]) * int(x[3])
 
+
 def max_prod_in_row(matrix):
     max_prod = 0
     for row in matrix:
         for i in range(len(row) - 3):
-            temp_prod = prod_4(row[i:i+4])
+            temp_prod = prod_4(row[i : i + 4])
             if temp_prod > max_prod:
                 max_prod = temp_prod
     return max_prod
+
 
 def max_prod_in_col(matrix):
     max_prod = 0
     for i in range(len(matrix)):
         for j in range(len(matrix[i]) - 3):
-            temp_prod = prod_4(matrix[i][j:j+4])
+            temp_prod = prod_4(matrix[i][j : j + 4])
             if temp_prod > max_prod:
                 max_prod = temp_prod
     return max_prod
+
 
 def max_prod_in_diag(matrix):
     max_prod = 0
     for i in range(len(matrix) - 3):
         for j in range(len(matrix[i]) - 3):
-            temp_prod = prod_4([matrix[i+k][j+k] for k in range(4)])
+            temp_prod = prod_4([matrix[i + k][j + k] for k in range(4)])
             if temp_prod > max_prod:
                 max_prod = temp_prod
     return max_prod
+
 
 def max_prod_in_diag_rev(matrix):
     max_prod = 0
     for i in range(len(matrix) - 3):
         for j in range(len(matrix[i]) - 3):
-            temp_prod = prod_4([matrix[i+k][j+3-k] for k in range(4)])
+            temp_prod = prod_4([matrix[i + k][j + 3 - k] for k in range(4)])
             if temp_prod > max_prod:
                 max_prod = temp_prod
     return max_prod
 
-print(max([max_prod_in_row(matrix), max_prod_in_col(matrix), max_prod_in_diag(matrix), max_prod_in_diag_rev(matrix)]))
+
+print(
+    max(
+        [
+            max_prod_in_row(matrix),
+            max_prod_in_col(matrix),
+            max_prod_in_diag(matrix),
+            max_prod_in_diag_rev(matrix),
+        ]
+    )
+)

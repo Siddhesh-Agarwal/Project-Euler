@@ -12,8 +12,10 @@ The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5
 What is the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an integer with (1,2, ... , n) where n > 1?
 """
 
+
 def is_pandigital(number: str):
-    return all([len(number) == 9, len(set(number)) == 9, '0' not in number])
+    return all([len(number) == 9, len(set(number)) == 9, "0" not in number])
+
 
 largest_pandigital = 0
 

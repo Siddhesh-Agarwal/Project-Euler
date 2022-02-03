@@ -8,6 +8,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 find the sum of the even-valued terms.
 """
 
+
 def sum_of_even_fibonacci():
     a, b = 1, 2
     total = 0
@@ -16,5 +17,6 @@ def sum_of_even_fibonacci():
             total += b
         a, b = b, a + b
     return total
+
 
 print(sum_of_even_fibonacci())

@@ -15,6 +15,7 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 
+
 def collatz(num):
     arr = []
     while num != 1:
@@ -24,6 +25,7 @@ def collatz(num):
         else:
             num = 3 * num + 1
     return arr
+
 
 max_len = 1
 max_num = 1
